@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email = %q{bengriffiths@gmail.com}
   s.executables = ["gouge"]
   s.extra_rdoc_files = ["README"]
-  s.files = ["bin/gouge", "lib/gouge/application/app.rb", "lib/gouge/application/views/scrape.erb", "lib/gouge.rb", "README"]
+  s.files = ["bin/gouge", "lib/gouge/application/app.rb", "lib/gouge/application/views/scrape.erb", "lib/gouge/tasks/rake.rb", "lib/gouge.rb", "README"]
   s.homepage = %q{https://github.com/techbelly/gouge}
   s.rdoc_options = ["--main", "README"]
   s.require_paths = ["lib"]

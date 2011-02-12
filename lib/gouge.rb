@@ -1,0 +1,1 @@
+require 'gouge/application/app.rb'

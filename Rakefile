@@ -3,7 +3,6 @@ require "rake/gempackagetask"
 require "rake/rdoctask"
 
 
-
 task :default => :package do
   puts "Don't forget to write some tests!"
 end
@@ -30,7 +29,7 @@ spec = Gem::Specification.new do |s|
   s.rdoc_options      = %w(--main README)
 
   # Add any extra files to include in the gem (like your README)
-  s.files             = %w() + Dir.glob("{bin,lib,tasks}/**/*")
+  s.files             = %w() + Dir.glob("{bin,lib}/**/*")
   s.executables       = FileList["bin/**"].map { |f| File.basename(f) }
   s.require_paths     = ["lib"]
 
@@ -71,6 +70,12 @@ Rake::RDocTask.new do |rd|
   
   rd.rdoc_files.include("lib/**/*.rb")
   rd.rdoc_dir = "rdoc"
+end
+
+task :reinstall do
+  sh "gem uninstall gouge"
+  sh "rake"
+  sh "gem install pkg/gouge-#{spec.version}.gem"
 end
 
 desc 'Clear out RDoc and generated packages'
