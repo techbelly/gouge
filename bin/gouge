@@ -9,4 +9,4 @@ rescue LoadError => e
   require 'gouge/application/app.rb'
 end
 
-Gouge.run!
+Gouge::App.run!

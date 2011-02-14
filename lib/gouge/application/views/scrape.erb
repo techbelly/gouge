@@ -1,6 +1,22 @@
 <html>
-<head>Gouge project</head>
+<head>Gouge</head>
 <body>
-  <h1>Gouge project</h1>
-</body>
+  <h1>Gouge</h1>
+  <h2>Scrapers:</h2>
+  <% Gouge::Scraper.launchables.each do |scraper| %>
+    <ul>
+      <li>
+        <span><%= scraper.name %></span>
+        <span>&rarr;</span>
+        <span><%= scraper.description %></span>
+        <span>
+          <form method="post" action="/scraper">
+              <input type="submit" value="<%= scraper.button %>" />
+              <input type="hidden" name="classname" value="<%= scraper.name %>" />
+          </form>
+        </span>
+      </li>
+    </ul>
+  <% end %>
+<body>
 </html>

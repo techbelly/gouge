@@ -37,6 +37,8 @@ spec = Gem::Specification.new do |s|
   # relevant versions
   s.add_dependency("sinatra")
   s.add_dependency("rake")
+  s.add_dependency("activerecord")
+  s.add_dependency("delayed_job")
 
   # If your tests use any gems, include them here
   # s.add_development_dependency("mocha") # for example

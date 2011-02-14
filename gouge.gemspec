@@ -6,12 +6,12 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ben Griffiths"]
-  s.date = %q{2011-02-12}
+  s.date = %q{2011-02-14}
   s.default_executable = %q{gouge}
   s.email = %q{bengriffiths@gmail.com}
   s.executables = ["gouge"]
   s.extra_rdoc_files = ["README"]
-  s.files = ["bin/gouge", "lib/gouge", "lib/gouge/application", "lib/gouge/application/app.rb", "lib/gouge/application/views", "lib/gouge/application/views/scrape.erb", "lib/gouge/tasks", "lib/gouge/tasks/rake.rb", "lib/gouge.rb", "lib/tasks", "README"]
+  s.files = ["bin/gouge", "lib/gouge/application/app.rb", "lib/gouge/application/views/scrape.erb", "lib/gouge/scraper.rb", "lib/gouge/tasks/rake.rb", "lib/gouge/utils.rb", "lib/gouge.rb", "README"]
   s.homepage = %q{https://github.com/techbelly/gouge}
   s.rdoc_options = ["--main", "README"]
   s.require_paths = ["lib"]
@@ -25,12 +25,18 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<sinatra>, [">= 0"])
       s.add_runtime_dependency(%q<rake>, [">= 0"])
+      s.add_runtime_dependency(%q<activerecord>, [">= 0"])
+      s.add_runtime_dependency(%q<delayed_job>, [">= 0"])
     else
       s.add_dependency(%q<sinatra>, [">= 0"])
       s.add_dependency(%q<rake>, [">= 0"])
+      s.add_dependency(%q<activerecord>, [">= 0"])
+      s.add_dependency(%q<delayed_job>, [">= 0"])
     end
   else
     s.add_dependency(%q<sinatra>, [">= 0"])
     s.add_dependency(%q<rake>, [">= 0"])
+    s.add_dependency(%q<activerecord>, [">= 0"])
+    s.add_dependency(%q<delayed_job>, [">= 0"])
   end
 end
