@@ -39,6 +39,7 @@ spec = Gem::Specification.new do |s|
   s.add_dependency("rake")
   s.add_dependency("activerecord")
   s.add_dependency("delayed_job")
+  s.add_dependency("nokogiri")
 
   # If your tests use any gems, include them here
   # s.add_development_dependency("mocha") # for example

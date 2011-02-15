@@ -8,6 +8,7 @@ namespace :gouge do
     sh "git commit -a -m'First commit of webapp'"
     sh "heroku create"
     sh "git push heroku master"
+    sh "heroku rake db:migrate"
     sh "heroku open"
   end
 end
